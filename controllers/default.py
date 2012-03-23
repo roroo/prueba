@@ -10,12 +10,10 @@
 #########################################################################
 
 def index():
-    """
-    example action using the internationalization operator T and flash
-    rendered by views/default/index.html or views/generic.html
-    """
-    response.flash = "Welcome to web2py!"
-    return dict(message=T('Hello World'))
+    
+    form = SQLFORM.grid(db.gente, ui='jquery-ui', user_signature= False)
+    
+    return dict(form = form)
 
 def user():
     """
@@ -68,4 +66,3 @@ def data():
       LOAD('default','data.load',args='tables',ajax=True,user_signature=True)
     """
     return dict(form=crud())
-

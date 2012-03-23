@@ -53,3 +53,18 @@ CREATE TABLE auth_cas(
     renew CHAR(1)
 );
 success!
+timestamp: 2012-03-23T19:53:01.727000
+CREATE TABLE gente(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nombre CHAR(512),
+    apellido CHAR(512),
+    edad INTEGER,
+    fecha DATE,
+    fechah TIMESTAMP,
+    email CHAR(512)
+);
+success!
+timestamp: 2012-03-23T19:54:13.588000
+ALTER TABLE gente ADD mail CHAR(512);
+timestamp: 2012-03-23T19:54:44.752000
+ALTER TABLE gente ADD correo CHAR(512);

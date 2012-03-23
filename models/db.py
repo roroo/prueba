@@ -79,3 +79,15 @@ use_janrain(auth,filename='private/janrain.key')
 ## >>> for row in rows: print row.id, row.myfield
 #########################################################################
 
+db.define_table('gente',
+    Field('nombre'),
+    Field('apellido'),
+    Field('edad','integer'),
+    Field('fecha','date'),
+    Field('fechah','datetime'),
+    Field('correo','string'),
+    )
+    
+db.gente.fecha.default = request.now
+db.gente.fecha.writable = False
+db.gente.correo.requires = IS_EMAIL()
